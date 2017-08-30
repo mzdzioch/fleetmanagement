@@ -1,5 +1,6 @@
 package com.fleetmgmt.management;
 
+import com.fleetmgmt.location.Location;
 import com.fleetmgmt.vehicle.Vehicle;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class Management {
     private List<Vehicle> vehicleList = new ArrayList<>();
 
     public void addVehicle(Vehicle vehicle) {
+        vehicle.setFleetCompany(this.nameCompany);
         vehicleList.add(vehicle);
         System.out.println("A new vehicle has been added");
     }
@@ -35,23 +37,50 @@ public class Management {
             if(vehicle.getPlateNumber().equals(plateNumber)) {
                 result = vehicle;
                 break;
-            } else
-                System.out.println("A vehicle does not exist in the database");
+            }
         }
         return result;
     }
 
-    public int getTotalNumberOfVehicles(){
+    public int getTotalNumberOfFleet(){
         int number = 0;
         number = vehicleList.size();
 
         return number;
     }
 
-    public int getNumberOfVehicle(){
+    public int getNumberOfVehicleOnRoad(){
         int number = 0;
-
+        for (Vehicle vehicle : vehicleList) {
+            if(vehicle.isOnTheRoad())
+                number++;
+        }
         return number;
+    }
+
+    public int getFleetStock(){
+        int number = 0;
+        for (Vehicle vehicle : vehicleList) {
+            if(!vehicle.isOnTheRoad())
+                number++;
+        }
+        return number;
+    }
+
+    public Location findLocationByVehicle(Vehicle vehicle) {
+        return vehicle.getLocation();
+    }
+
+    public Location findLocationByDriver(Driver driver) {
+        Location findVehicle = null;
+
+        for (Vehicle vehicle : vehicleList) {
+            if(vehicle.getDiver().equals(driver)){
+                findVehicle = vehicle.getLocation();
+            }
+        }
+
+        return findVehicle;
     }
 
 

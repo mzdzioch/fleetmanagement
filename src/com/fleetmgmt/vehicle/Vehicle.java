@@ -1,5 +1,6 @@
 package com.fleetmgmt.vehicle;
 
+import com.fleetmgmt.location.Location;
 import com.fleetmgmt.management.Driver;
 
 /**
@@ -9,10 +10,12 @@ public class Vehicle {
 
     private String plateNumber;
     private String model;
+    private String fleetCompany;
     private Driver diver;
     private int distance;
     private int weight;
     private boolean isOnTheRoad = false;
+    private Location location;
 
     public Vehicle() {
     }
@@ -72,6 +75,23 @@ public class Vehicle {
     public String getPlateNumber() {
         return plateNumber;
     }
+
+    public String getFleetCompany() {
+        return fleetCompany;
+    }
+
+    public void setFleetCompany(String fleetCompany) {
+        this.fleetCompany = fleetCompany;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
 
 
     @Override
