@@ -1,6 +1,6 @@
 package com.fleetmgmt.management;
 
-import com.fleetmgmt.com.vehicle.Vehicle;
+import com.fleetmgmt.vehicle.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;

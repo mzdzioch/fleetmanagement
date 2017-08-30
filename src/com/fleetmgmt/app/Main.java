@@ -1,4 +1,4 @@
-package com.fleetmgmt;
+package com.fleetmgmt.app;
 
 public class Main {
 

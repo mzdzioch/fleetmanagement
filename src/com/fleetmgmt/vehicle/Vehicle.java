@@ -1,4 +1,6 @@
-package com.fleetmgmt.com.vehicle;
+package com.fleetmgmt.vehicle;
+
+import com.fleetmgmt.management.Driver;
 
 /**
  * Created by mzdzioch on 2017-08-30.
@@ -7,17 +9,20 @@ public class Vehicle {
 
     private String plateNumber;
     private String model;
-    private String diver;
+    private Driver diver;
     private int distance;
-    private int wight;
+    private int weight;
     private boolean isOnTheRoad = false;
 
-    public Vehicle(String plateNumber, String model, String diver, int distance, int wight) {
+    public Vehicle() {
+    }
+
+    public Vehicle(String plateNumber, String model, Driver diver, int distance, int weight) {
         this.plateNumber = plateNumber;
         this.model = model;
         this.diver = diver;
         this.distance = distance;
-        this.wight = wight;
+        this.weight = weight;
     }
 
     public boolean isOnTheRoad() {
@@ -36,11 +41,11 @@ public class Vehicle {
         this.model = model;
     }
 
-    public String getDiver() {
+    public Driver getDiver() {
         return diver;
     }
 
-    public void setDiver(String diver) {
+    public void setDiver(Driver diver) {
         this.diver = diver;
     }
 
@@ -52,12 +57,12 @@ public class Vehicle {
         this.distance = distance;
     }
 
-    public int getWight() {
-        return wight;
+    public int getWeight() {
+        return weight;
     }
 
     public void setWight(int wight) {
-        this.wight = wight;
+        this.weight = wight;
     }
 
     public void setOnTheRoad(boolean onTheRoad) {
@@ -74,7 +79,7 @@ public class Vehicle {
         return "Vehicle{" +
                 "model='" + model + '\'' +
                 ", distance=" + distance +
-                ", wight=" + wight +
+                ", wight=" + weight +
                 '}';
     }
 }
