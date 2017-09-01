@@ -5,22 +5,37 @@ package com.fleetmgmt.location;
  */
 public class Location {
 
-    private long latitude;
-    private long longitude;
+    private double latitude;
+    private double longitude;
 
-    public long getLatitude() {
+    public Location() {
+    }
+
+    public Location(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(long latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public long getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(long longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    @Override
+    public String toString() {
+        return "Current GPS position: " +
+                "latitude=" + latitude +
+                ", longitude=" + longitude;
     }
 }

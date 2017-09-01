@@ -16,16 +16,18 @@ public class Vehicle {
     private int weight;
     private boolean isOnTheRoad = false;
     private Location location;
+    private String name;
 
     public Vehicle() {
     }
 
-    public Vehicle(String plateNumber, String model, Driver diver, int distance, int weight) {
+    public Vehicle(String plateNumber, String model, Driver diver, int distance, int weight, String name) {
         this.plateNumber = plateNumber;
         this.model = model;
         this.diver = diver;
         this.distance = distance;
         this.weight = weight;
+        this.name = name;
     }
 
     public boolean isOnTheRoad() {
@@ -64,10 +66,6 @@ public class Vehicle {
         return weight;
     }
 
-    public void setWight(int wight) {
-        this.weight = wight;
-    }
-
     public void setOnTheRoad(boolean onTheRoad) {
         isOnTheRoad = onTheRoad;
     }
@@ -92,7 +90,9 @@ public class Vehicle {
         this.location = location;
     }
 
-
+    public String getName() {
+        return name;
+    }
 
     @Override
     public String toString() {

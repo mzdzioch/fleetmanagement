@@ -67,15 +67,11 @@ public class Management {
         return number;
     }
 
-    public Location findLocationByVehicle(Vehicle vehicle) {
-        return vehicle.getLocation();
-    }
-
-    public Location findLocationByDriver(Driver driver) {
+    public Location findLocationByVehicle(String vehicleName) {
         Location findVehicle = null;
 
         for (Vehicle vehicle : vehicleList) {
-            if(vehicle.getDiver().equals(driver)){
+            if(vehicle.getName().equals(vehicleName)) {
                 findVehicle = vehicle.getLocation();
             }
         }
@@ -83,6 +79,28 @@ public class Management {
         return findVehicle;
     }
 
+    public Location findLocationByDriver(String name) {
+        Location findVehicle = null;
+        Vehicle vehicle = findVehicleByDriverName(name);
 
+        if(vehicle != null) {
+            findVehicle = vehicle.getLocation();
+        }
+
+        return findVehicle;
+    }
+
+    private Vehicle findVehicleByDriverName(String name) {
+        Vehicle result = null;
+
+        for (Vehicle vehicle : vehicleList) {
+            if(vehicle.getDiver().getSecondName().equals(name)){
+                result = vehicle;
+                break;
+            }
+        }
+
+        return result;
+    }
 
 }

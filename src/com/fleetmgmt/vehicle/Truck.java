@@ -7,10 +7,7 @@ import com.fleetmgmt.management.Driver;
  */
 public class Truck extends Vehicle {
 
-    private String name;
-
     public Truck(String plateNumber, String model, Driver diver, int distance, int weight, String name) {
-        super(plateNumber, model, diver, distance, weight);
-        this.name = name;
+        super(plateNumber, model, diver, distance, weight, name);
     }
 }

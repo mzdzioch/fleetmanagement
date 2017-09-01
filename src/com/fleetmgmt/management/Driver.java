@@ -28,4 +28,10 @@ public class Driver {
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
+
+    @Override
+    public String toString() {
+        return "Kierowcą samochodu jest: " +
+                 firstName + " " + secondName;
+    }
 }
